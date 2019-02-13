@@ -46,11 +46,13 @@ class view_assets {
     public function __construct($cm, $course, $forceembedtype = null) {
         global $CFG;
 
+        require_once($CFG->dirroot . "/mod/hvp/locallib.php");
+
         $this->cm          = $cm;
         $this->course      = $course;
         $this->core        = framework::instance();
         $this->content     = $this->core->loadContent($cm->instance);
-        $this->settings    = hvp_get_core_assets(\context_module::instance($cm->id));
+        $this->settings    = \hvp_get_core_assets(\context_module::instance($cm->id));
         $this->jsrequires  = [];
         $this->cssrequires = [];
 
