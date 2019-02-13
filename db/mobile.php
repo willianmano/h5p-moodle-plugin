@@ -25,24 +25,24 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$addons = array(
-    "mod_hvp" => array(
-        'handlers' => array(
-            'coursehvp' => array(
-                'displaydata' => array(
+$addons = [
+    "mod_hvp" => [
+        'handlers' => [
+            'coursehvp' => [
+                'displaydata' => [
                     'icon' => $CFG->wwwroot . '/mod/hvp/pix/icon.png',
                     'class' => '',
-                ),
+                ],
                 'delegate' => 'CoreCourseModuleDelegate',
                 'isresource' => true,
                 'method' => 'mobile_course_view',
-                'offlinefunctions' => array(
-                    'mobile_course_view' => array()
-                )
-            )
-        ),
-        'lang' => array(
-            array('pluginname', 'hvp')
-        ),
-    )
-);
+                'offlinefunctions' => [
+                    'mobile_course_view' => []
+                ]
+            ]
+        ],
+        'lang' => [
+            ['pluginname', 'hvp']
+        ],
+    ]
+];

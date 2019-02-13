@@ -28,7 +28,6 @@ namespace mod_hvp\output;
 defined('MOODLE_INTERNAL') || die();
 
 use context_module;
-use mod_certificate_external;
 
 /**
  * Mobile output class for certificate
@@ -56,6 +55,7 @@ class mobile {
 
         $args = (object) $args;
         $cm = get_coursemodule_from_id('hvp', $args->cmid);
+        $course = $DB->get_record('course', ['id' => $args->courseid]);
 
         // Capabilities check.
         require_login($args->courseid , false , $cm, true, true);
@@ -64,7 +64,7 @@ class mobile {
 
         require_capability ('mod/hvp:view', $context);
 
-        $view = new \mod_hvp\view_assets($cm, $args->courseid);
+        $view = new \mod_hvp\view_assets($cm, $course);
         $view->validatecontent();
         $content = $view->getcontent();
         $view->validatecontent();
