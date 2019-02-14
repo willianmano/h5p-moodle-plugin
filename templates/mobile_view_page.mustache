@@ -5,13 +5,7 @@
     <ion-card>
       <ion-card-content>
           <div class="h5p-iframe-wrapper">
-              <iframe id="h5p-iframe-<% contentid %>"
-                      class="h5p-iframe"
-                      data-content-id="<% contentid %>"
-                      style="height:1px;"
-                      src="about:blank"
-                      frameBorder="0"
-                      scrolling="no">
+              <iframe src="<% config.wwwroot %>/mod/hvp/view.php?id=<% cmid %>">
               </iframe>
           </div>
       </ion-card-content>
